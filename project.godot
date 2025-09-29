@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Mario Forever - Thunder Engine"
+config/name="Mario Forever - Randomness Levels (Thunder Engine)"
 config/tags=PackedStringArray("game", "mario_forever")
 run/main_scene="res://stages/intro/intro.tscn"
 config/project_settings_override="user://boot.thss"
@@ -72,7 +72,6 @@ SettingsManager="*res://engine/singletones/scripts/SettingsManager.gd"
 SkinsManager="*res://engine/singletones/scripts/SkinsManager.gd"
 Pause="*res://engine/components/pause/pause.tscn"
 GameOverContinue="*res://engine/components/game_over/game_over_continue.tscn"
-SkinsManager="*res://engine/singletones/scripts/SkinsManager.gd"
 
 [debug]
 
