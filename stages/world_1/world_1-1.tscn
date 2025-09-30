@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://w0xp68p3kqoa"]
+[gd_scene load_steps=19 format=4 uid="uid://w0xp68p3kqoa"]
 
 [ext_resource type="Script" uid="uid://dh7ob1sbo8lx7" path="res://engine/scripts/classes/level/level.gd" id="1_aoarn"]
 [ext_resource type="AudioStream" uid="uid://bqiy8kvcsy0rk" path="res://engine/scripts/classes/level/complete.ogg" id="2_ykvcy"]
@@ -12,7 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://2yepdgrhpmj3" path="res://engine/objects/bumping_blocks/brick/brick.tscn" id="11_02ykd"]
 [ext_resource type="PackedScene" uid="uid://ugxjxrdao5el" path="res://engine/components/hud/hud.tscn" id="11_78wva"]
 [ext_resource type="PackedScene" uid="uid://5ssr5jwpsldi" path="res://engine/objects/bumping_blocks/question_block/templates/Coin Question Block.tscn" id="12_xg2oj"]
+[ext_resource type="PackedScene" uid="uid://b8kgbn8f7lvf0" path="res://engine/objects/items/coin/coin.tscn" id="13_s7dgs"]
 [ext_resource type="PackedScene" uid="uid://d20tu17c32ipm" path="res://engine/objects/bumping_blocks/question_block/templates/Boomerang Flower Question Block.tscn" id="13_smf7x"]
+[ext_resource type="Script" uid="uid://chvjy6okoognf" path="res://engine/objects/powerups/instance_powerup.gd" id="14_mssfw"]
 
 [sub_resource type="Gradient" id="Gradient_4mqjo"]
 colors = PackedColorArray(0.415686, 0.415686, 0.972549, 1, 0.952941, 0.952941, 0.952941, 1)
@@ -22,6 +24,21 @@ gradient = SubResource("Gradient_4mqjo")
 width = 640
 height = 480
 fill_to = Vector2(0, 1)
+
+[sub_resource type="Resource" id="Resource_1rpsu"]
+resource_local_to_scene = true
+script = ExtResource("14_mssfw")
+creation_nodepack = ExtResource("13_s7dgs")
+creation_force_sibling = false
+trans_offset = Vector2(0, 0)
+trans_inheritances = 7
+trans_rotation = 0.0
+trans_scale = Vector2(1, 1)
+trans_skew = 0.0
+visi_z_index = 0
+visi_z_as_relative = true
+visi_y_sort_enabled = false
+custom_vars = {}
 
 [node name="LevelExample" type="Node2D"]
 editor_description = "Enter map scene path in the \"Jump to Scene\" property here."
@@ -81,6 +98,7 @@ position = Vector2(464, 288)
 
 [node name="QuestionBlock" parent="." instance=ExtResource("12_xg2oj")]
 position = Vector2(496, 288)
+result = SubResource("Resource_1rpsu")
 
 [node name="QuestionBlockBoomerang" parent="." instance=ExtResource("13_smf7x")]
 position = Vector2(528, 288)

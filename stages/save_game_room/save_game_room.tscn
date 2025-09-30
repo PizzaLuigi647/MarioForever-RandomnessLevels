@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://d3k5jhb1pn0ev"]
+[gd_scene load_steps=53 format=4 uid="uid://d3k5jhb1pn0ev"]
 
 [ext_resource type="Script" uid="uid://dh7ob1sbo8lx7" path="res://engine/scripts/classes/level/level.gd" id="1_ciwn6"]
 [ext_resource type="AudioStream" uid="uid://bqiy8kvcsy0rk" path="res://engine/scripts/classes/level/complete.ogg" id="2_0gi01"]
@@ -32,6 +32,8 @@
 [ext_resource type="Script" uid="uid://drr3wdl8celkj" path="res://engine/scripts/nodes/effects/blinking_canvas_item.gd" id="29_sipmr"]
 [ext_resource type="AudioStream" uid="uid://b76ae2v10akqg" path="res://engine/objects/players/prefabs/sounds/pipe_cutscene.wav" id="30_8x2nq"]
 [ext_resource type="PackedScene" uid="uid://5ssr5jwpsldi" path="res://engine/objects/bumping_blocks/question_block/templates/Coin Question Block.tscn" id="32_q6vtr"]
+[ext_resource type="PackedScene" uid="uid://b8kgbn8f7lvf0" path="res://engine/objects/items/coin/coin.tscn" id="33_yl3yj"]
+[ext_resource type="Script" uid="uid://chvjy6okoognf" path="res://engine/objects/powerups/instance_powerup.gd" id="34_kwx6t"]
 
 [sub_resource type="Gradient" id="Gradient_j42r0"]
 colors = PackedColorArray(0.246609, 0.468349, 1, 1, 1, 1, 1, 1)
@@ -143,6 +145,51 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_csgur"]
 radius = 24.0
+
+[sub_resource type="Resource" id="Resource_axewu"]
+resource_local_to_scene = true
+script = ExtResource("34_kwx6t")
+creation_nodepack = ExtResource("33_yl3yj")
+creation_force_sibling = false
+trans_offset = Vector2(0, 0)
+trans_inheritances = 7
+trans_rotation = 0.0
+trans_scale = Vector2(1, 1)
+trans_skew = 0.0
+visi_z_index = 0
+visi_z_as_relative = true
+visi_y_sort_enabled = false
+custom_vars = {}
+
+[sub_resource type="Resource" id="Resource_ghkek"]
+resource_local_to_scene = true
+script = ExtResource("34_kwx6t")
+creation_nodepack = ExtResource("33_yl3yj")
+creation_force_sibling = false
+trans_offset = Vector2(0, 0)
+trans_inheritances = 7
+trans_rotation = 0.0
+trans_scale = Vector2(1, 1)
+trans_skew = 0.0
+visi_z_index = 0
+visi_z_as_relative = true
+visi_y_sort_enabled = false
+custom_vars = {}
+
+[sub_resource type="Resource" id="Resource_ssore"]
+resource_local_to_scene = true
+script = ExtResource("34_kwx6t")
+creation_nodepack = ExtResource("33_yl3yj")
+creation_force_sibling = false
+trans_offset = Vector2(0, 0)
+trans_inheritances = 7
+trans_rotation = 0.0
+trans_scale = Vector2(1, 1)
+trans_skew = 0.0
+visi_z_index = 0
+visi_z_as_relative = true
+visi_y_sort_enabled = false
+custom_vars = {}
 
 [node name="SaveGameRoom" type="Node2D"]
 script = ExtResource("1_ciwn6")
@@ -508,12 +555,15 @@ use_circle_transition = true
 
 [node name="QuestionBlock4" parent="." instance=ExtResource("32_q6vtr")]
 position = Vector2(2128, 304)
+result = SubResource("Resource_axewu")
 
 [node name="QuestionBlock" parent="." instance=ExtResource("32_q6vtr")]
 position = Vector2(2192, 304)
+result = SubResource("Resource_ghkek")
 
 [node name="QuestionBlock2" parent="." instance=ExtResource("32_q6vtr")]
 position = Vector2(2160, 176)
+result = SubResource("Resource_ssore")
 
 [connection signal="body_entered" from="PipeSave" to="Reset" method="_on_pipe_save_player_enter" unbinds=1]
 [connection signal="body_exited" from="PipeSave" to="Reset" method="_on_pipe_save_player_exit" unbinds=1]
